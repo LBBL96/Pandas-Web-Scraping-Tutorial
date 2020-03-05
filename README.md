@@ -3,7 +3,7 @@
 
 I've read lengthy tutorials where the authors have used libraries like urllib and BeautifulSoup and many, many steps to scrape and parse sports statistics from web pages. There's a much easier way to do it. Use Pandas.
 
-![Decisions](images/Photo by James Wheeler from Pexels.jpg)
+![Decisions](images/split_road.jpg)
 Photo Credit: James Wheeler on Pexels.com
 
 This tutorial covers how to pull sports statistics from Wikipedia, but the same steps can be applied to any web data that's in table form. I'll put a couple of links at the bottom for you try out.

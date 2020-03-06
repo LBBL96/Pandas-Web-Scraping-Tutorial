@@ -87,7 +87,7 @@ df
 
 ![img](images/table_7.png)
 
-Beautiful! We could re-name the index column, but it doesn't really bother me. 
+Beautiful!
 
 If you know you'll be pulling lots of data in the same format, it's a good idea to make the cleanup steps into a function. Here I'll re-create the steps above, but I'll make dropping the last row its own step. By doing this, the variation in the length of scoring summaries from different football games won't matter. The function will always drop the last row.
 

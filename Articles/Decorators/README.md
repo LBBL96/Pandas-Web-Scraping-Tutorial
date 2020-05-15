@@ -248,7 +248,7 @@ But now when we call `help()`, we get what we wanted.
 <b>[Out]</b> Help on function add in module __main__:
 
 add(a, b)
-        Takes two parameters, a and b, and returns their sum.
+    Takes two parameters, a and b, and returns their sum.
 </pre>
         
 <pre>help(add_more)</pre>

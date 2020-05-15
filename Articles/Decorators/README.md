@@ -85,7 +85,7 @@ Note that when we put `fn` into the `timer()` function, we leave off the parenth
 
 `inner_func` is a generic name I picked for the function we want to time. We can call this anything we want, but it's best to pick something descriptive. 
 
-This is the place where we'll put in the parameters for the function we want to time. I could hard-code my earlier parameters `(1, 3)`, but that's not particularly useful if I want to use any other inputs.
+`inner_func` is where we'll put in the parameters for the function we want to time. I could hard-code my earlier parameters `(1, 3)`, but that's not particularly useful if I want to use any other inputs.
 
 So how do we put generic parameters in? We use `*args` and `**kwargs`.
 

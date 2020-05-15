@@ -234,16 +234,16 @@ They work just as they did before:
 
 But now when we call `help()`, we get what we wanted.
 
-    help(add)
+`help(add)`
 
 <pre>
-</b>[out]</b> Help on function add in module __main__:
+<b>[out]</b> Help on function add in module __main__:
 
 add(a, b)
         Takes two parameters, a and b, and returns their sum.
 </pre>
         
-        help(add_more)
+`help(add_more)`
 <pre>
 <b>[out]</b> Help on function add_more in module __main__:
 

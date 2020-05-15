@@ -1,7 +1,7 @@
 # How to Write and Use Decorators in Python
 ## @ isn't just for email anymore
 
-![sparkler](sparkler.jpeg)
+![sparkler](halloween-toni-cuenca.jpeg)
 ### What's a Decorator?
 In Python, a decorator is a function that wraps around another function. Its purpose is to provide additional functionality to the function that it wraps.
 

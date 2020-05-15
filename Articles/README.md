@@ -103,8 +103,7 @@ Since we wrote this as a wrapper/decorator, it's not going to give the right out
 
     timer(add(1,3))
 
-<pre><b>[Out]</b></pre>
-    <function __main__.timer.<locals>.inner_func(*args, **kwargs)>
+<pre><b>[Out]</b> &lt;function __main__.timer.&lt;locals&gt;.inner_func(*args, **kwargs)&gt;</pre>
 
 ### Let's Decorate!
 

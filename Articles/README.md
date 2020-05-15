@@ -23,8 +23,9 @@ I want to see what your function does, so I call help on it.
 
     help(add)
 
-<pre><b>[Out]</b>Help on function add in module __main__:
-    add(a, b)
+<pre><b>[Out]</b> Help on function add in module __main__:
+
+add(a, b)
     Takes two parameters, a and b, and returns their sum.</pre>
 
 Thank you for that!
@@ -102,7 +103,7 @@ Since we wrote this as a wrapper/decorator, it's not going to give the right out
 
     timer(add(1,3))
 
-<pre><b>[Out]</b><function __main__.timer.<locals>.inner_func(*args, **kwargs)></pre>
+<pre><b>[Out]</b><function __main__.timer.\<locals\>.inner_func(*args, **kwargs)></pre>
 
 ### Let's Decorate!
 
@@ -131,7 +132,7 @@ Make sure you don't leave a space between `@` and the function name, and don't u
 <pre>add(1, 3)
 
 <b>[Out]</b> Run time: 0.00000063
-            4</pre>
+4</pre>
 
 ### Let's try this with another function!
 
@@ -144,8 +145,8 @@ Make sure you don't leave a space between `@` and the function name, and don't u
 
 <pre>add_more(1, 3, 4, 6)
 
-<b>[Out]</b>Run time: 0.00000081
-            14</pre>
+<b>[Out]</b> Run time: 0.00000081
+14</pre>
 
 Woo-hoo! 
 
@@ -169,6 +170,7 @@ inner_func(*args, **kwargs)
 </pre>
 
 <pre>help(add_more)
+
 <b>[Out]</b> Help on function inner_func in module __main__:
 
 inner_func(*args, **kwargs)
@@ -223,7 +225,7 @@ They work just as they did before:
 
     add(1, 3)
 
-<pre></b>[Out]</b>Run time: 0.00000078
+<pre></b>[Out]</b> Run time: 0.00000078
 
 4</pre>
 
@@ -246,7 +248,7 @@ add(a, b)
         Takes two parameters, a and b, and returns their sum.
 </pre>
         
-`help(add_more)`
+<pre>help(add_more)</pre>
 <pre>
 <b>[Out]</b> Help on function add_more in module __main__:
 

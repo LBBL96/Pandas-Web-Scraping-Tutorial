@@ -226,9 +226,11 @@ They work just as they did before:
 
     add_more(1, 3, 4, 6)
 
-`[out] Run time: 0.00000070`
+<pre>
+<b>[out]</b> Run time: 0.00000070
 
-`14`
+14
+</pre>
 
 But now when we call `help()`, we get what we wanted.
 

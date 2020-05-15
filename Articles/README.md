@@ -1,12 +1,12 @@
-# How to Write and Use a Decorator in Python
+# How to Write and Use Decorators in Python
 ## @ isn't just for email anymore
 
 ### What's a Decorator?
-In Python, a decorator is a function that wraps another function. Its purpose is to provide some additional functionality to the function that it wraps.
+In Python, a decorator is a function that wraps around another function. Its purpose is to provide additional functionality to the function that it wraps.
 
 Let's look at an example.
 
-Let's say you've written a simple function that adds up two numbers. You also put a doc string in there because you're awesome and want to help anyone who uses your function to understand what it does.
+Say you've written a simple function that adds up two numbers. You also put a doc string in there because you're awesome and want to help anyone who uses your function to understand what it does.
 
     def add(a, b):
     """
@@ -15,9 +15,9 @@ Let's say you've written a simple function that adds up two numbers. You also pu
     return a + b
 
 
-<pre>add(1, 3)
+<pre>add(1, 3)</pre>
 
-<b>[Out]</b> 4</pre>
+<pre><b>[Out]</b> 4</pre>
 
 I want to see what your function does, so I call help on it. 
 
@@ -38,7 +38,7 @@ An easy and common decorator is a performance timer. Conveniently, Python includ
 
     from time import perf_counter
 
-If you wanted to see the performance of your function add(), you might do it this way:
+If you wanted to see the performance of your function `add()`, you might do it this way:
 
     start = perf_counter()
     print(add(1, 3))
@@ -48,11 +48,11 @@ If you wanted to see the performance of your function add(), you might do it thi
 <pre><b>[Out]</b> 4
 Run time: 0.00011559</pre>
 
-That was pretty fast. Also, I made the printing nicer-looking by using [f-string formatting](https://docs.python.org/3/library/string.html). I included some extra formatting at the end to take the decimals to 8 places.
+That was pretty fast. Also, I made the printout nicer-looking by using [f-string formatting](https://docs.python.org/3/library/string.html), with some extra formatting at the end to take the decimals to 8 places.
 
 Notice how `start` and `end` wrap around the `add()` function. This layout makes it a good candidate for a decorator, also known as a wrapper. 
 
-We write a decorator just like any other function. It will take a function as its parameter. I'll call the parameter `fn` to remind me that it's a function. I'll also import `perf_counter` within the function so that I don't have to remember to do that if I use `timer()` elsewhere in the future.
+We write a decorator just like any other function. Decorators take a function as their parameter. For this example, I'll call the parameter `fn` to remind me that it's a function. I'll also import `perf_counter` within the function so that I don't have to remember to do that if I use `timer()` elsewhere in the future.
 
     def timer(fn):
     """
@@ -79,11 +79,11 @@ We write a decorator just like any other function. It will take a function as it
 
 First off, `timer()` doesn't just take in the function `add()`. It can take in any function, which is why I used the generic variable `fn`. 
 
-Note that when we put `fn` into the `timer()` function, we leave off the parentheses even though it's a function. Why did we do that? Because the parentheses tell Python to call the function. We don't want to call the function yet. If we call it, then its output would be the input to `timer()`. Thus `timer(add(1, 3))` would actually be `timer(4)`, which is completely useless. We don't want to time the number 4, we want to time the function `add()`. Trying to call the function without parameters, e.g., `timer(add())`, doesn't work either. You have to leave off the parentheses. 
+Note that when we put `fn` into the `timer()` function, we leave off the parentheses even though it's a function. Why did we do that? Because the parentheses tell Python to call the function, and we don't want to call it yet. If we called the function, then its output would be the input to `timer()`. Thus `timer(add(1, 3))` would actually be `timer(4)`, which is completely useless. We don't want to time the number `4`; we want to time the function `add()`. Trying to call the function without parameters, e.g., `timer(add())`, doesn't work either. You have to leave off the parentheses. 
 
 #### Inner Function `inner_func`
 
-`inner_func` is a generic name I picked for the function we want to time. It's the inner function, so I chose to call it `inner_func`. We can call this anything we want, but it's best to pick something descriptive. 
+`inner_func` is a generic name I picked for the function we want to time. We can call this anything we want, but it's best to pick something descriptive. 
 
 This is the place where we'll put in the parameters for the function we want to time. I could hard-code my earlier parameters `(1, 3)`, but that's not particularly useful if I want to use any other inputs.
 
@@ -91,7 +91,7 @@ So how do we put generic parameters in? We use `*args` and `**kwargs`.
 
 #### What are `*args` and `**kwargs`?
 
-These are the generic placeholder names for an arbitrary type and number of parameters that can be attached to any function we choose to input into `timer()`. Using one star (`*`) tells Python that this is a positional argument. Two stars (`**`) tell Python it's a keyword argument. I won't go into what positional and keyword arguments are, as parameters are a whole other conversation, but it's enough to know that `*args` and `**kwargs` serve as a catch-all for any function that we choose to time, no matter how many or what kind of parameters belong to that function.
+These are the generic placeholder names for an arbitrary number of parameters that can be attached to any function we choose to input into `timer()`. Using one star (`*`) tells Python that this is a positional argument. Two stars (`**`) tell Python it's a keyword argument. I won't go into what positional and keyword arguments are, as parameters are a whole other conversation, but it's enough to know that `*args` and `**kwargs` serve as a catch-all for any function that we choose to time, no matter how many or what kind of parameters belong to that function.
 
 #### Return Statements
 
@@ -103,7 +103,7 @@ Since we wrote this as a wrapper/decorator, it's not going to give the right out
 
     timer(add(1,3))
 
-<pre><b>[Out]</b><function __main__.timer.\<locals\>.inner_func(*args, **kwargs)></pre>
+<pre><b>[Out]</b>\<function __main__.timer.\<locals\>.inner_func(*args, **kwargs)></pre>
 
 ### Let's Decorate!
 
@@ -114,13 +114,14 @@ There are two ways to call a decorator. One way is like this:
     add(1, 3)
 
 <pre><b>[Out]</b> Run time: 0.00000065
-            4</pre>
+
+4</pre>
 
 We've re-assigned the name `add` to the enclosing function `timer(add)`. Now when we call `add()`, we get not just the added result, but also the run time.
 
-Python has a prettier way to do the exact same thing. We can use the `@` sign with the wrapper function's name after it. 
+Python has a prettier way to do the exact same thing. We can use the `@` sign with the decorator function's name after it. 
 
-Make sure you don't leave a space between `@` and the function name, and don't use any parentheses. Put this on the line directly above the definition of the function that you wish to decorate. 
+Make sure you don't leave a space between `@` and the function name, and don't use any parentheses. Put this on the line directly above the definition of the function you wish to decorate. 
 
     @timer
     def add(a, b):
@@ -129,9 +130,10 @@ Make sure you don't leave a space between `@` and the function name, and don't u
         """
         return a + b
         
-<pre>add(1, 3)
+<pre>add(1, 3)</pre>
 
-<b>[Out]</b> Run time: 0.00000063
+<pre><b>[Out]</b> Run time: 0.00000063
+
 4</pre>
 
 ### Let's try this with another function!
@@ -143,9 +145,10 @@ Make sure you don't leave a space between `@` and the function name, and don't u
         """
         return a + b + c + d
 
-<pre>add_more(1, 3, 4, 6)
+<pre>add_more(1, 3, 4, 6)</pre>
 
-<b>[Out]</b> Run time: 0.00000081
+<pre><b>[Out]</b> Run time: 0.00000081
+
 14</pre>
 
 Woo-hoo! 
@@ -160,18 +163,18 @@ Woo-hoo!
 Re-assigning the function name means that we no longer have access to the original function's metadata. This matters if we want, for example, to get help with it.
 
 <pre>
-help(add)
+help(add)</pre>
     
-<b>[Out]</b> Help on function inner_func in module __main__:
+<pre><b>[Out]</b> Help on function inner_func in module __main__:
 
 inner_func(*args, **kwargs)
     This is the inner function that the timer decorator returns.
 
 </pre>
 
-<pre>help(add_more)
+<pre>help(add_more)</pre>
 
-<b>[Out]</b> Help on function inner_func in module __main__:
+<pre><b>[Out]</b> Help on function inner_func in module __main__:
 
 inner_func(*args, **kwargs)
     This is the inner function that the timer decorator returns.</pre>

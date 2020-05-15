@@ -105,7 +105,7 @@ Since we wrote this as a wrapper/decorator, it's not going to give the right out
 
 <pre><b>[Out]</b> &lt;function __main__.timer.&lt;locals&gt;.inner_func(*args, **kwargs)&gt;</pre>
 
-### Let's Decorate!
+### It's Time to Decorate It
 
 There are two ways to call a decorator. One way is like this:
 
@@ -136,7 +136,9 @@ Make sure you don't leave a space between `@` and the function name, and don't u
 
 4</pre>
 
-### Let's try this with another function!
+It works!
+
+### Let's try this with another function
 
     @timer
     def add_more(a, b, c, d):

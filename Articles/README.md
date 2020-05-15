@@ -15,16 +15,17 @@ Let's say you've written a simple function that adds up two numbers. You also pu
     return a + b
 
 
-    add(1, 3)
-    [out] 4
+`add(1, 3)`
+
+`[out] 4`
 
 I want to see what your function does, so I call help on it. 
 
     help(add)
 
-    [out] Help on function add in module __main__:
+`[out] Help on function add in module __main__:
     add(a, b)
-    Takes two parameters, a and b, and returns their sum.
+    Takes two parameters, a and b, and returns their sum.`
 
 Thank you for that!
 
@@ -43,8 +44,8 @@ If you wanted to see the performance of your function add(), you might do it thi
     end = perf_counter()
     print(f'Run time: {(end - start):0.8f}')
 
-    [out] 4
-    Run time: 0.00011559
+`*[out]* 4
+    Run time: 0.00011559`
 
 That was pretty fast. Also, I made the printing nicer-looking by using [f-string formatting](https://docs.python.org/3/library/string.html). I included some extra formatting at the end to take the decimals to 8 places.
 
@@ -111,9 +112,8 @@ There are two ways to call a decorator. One way is like this:
 
     add(1, 3)
 
-`[out] Run time: 0.00000065`
-
-`4`
+`[out] Run time: 0.00000065
+            4`
 
 We've re-assigned the name `add` to the enclosing function `timer(add)`. Now when we call `add()`, we get not just the added result, but also the run time.
 
@@ -130,9 +130,8 @@ Make sure you don't leave a space between `@` and the function name, and don't u
         
 `add(1, 3)`
 
-`[out] Run time: 0.00000063`
-
-`4`
+`[out] Run time: 0.00000063
+            4`
 
 ### Let's try this with another function!
 
@@ -145,9 +144,8 @@ Make sure you don't leave a space between `@` and the function name, and don't u
 
 `add_more(1, 3, 4, 6)`
 
-`[out] Run time: 0.00000081`
-
-`14`
+`[out] Run time: 0.00000081
+            14`
 
 Woo-hoo! 
 

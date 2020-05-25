@@ -124,7 +124,6 @@ These websites will give you a clean dataframe using the pattern
     data = pd.read_html(url)
     data[0]
     
-[World Population](https://www.worldometers.info/world-population/population-by-country/)
 [List of Countries in the World with Population and Land Area](https://www.worldometers.info/geography/how-many-countries-are-there-in-the-world/)
 [Largest Cities in the United States (data[3])](https://www.worldometers.info/world-population/us-population/)
 

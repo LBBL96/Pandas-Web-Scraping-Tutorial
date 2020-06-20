@@ -124,12 +124,12 @@ These websites will give you a clean dataframe using the pattern
     data = pd.read_html(url)
     data[0]
     
-[List of Countries in the World with Population and Land Area](https://www.worldometers.info/geography/how-many-countries-are-there-in-the-world/)
-[Largest Cities in the United States (data[3])](https://www.worldometers.info/world-population/us-population/)
 
 **Readable, but Some Cleanup Steps Required for Data Use**
 [Current Weather around the World](https://www.timeanddate.com/weather/)
+
 [List of U.S. Presidents](https://www.presidentsusa.net/presvplist.html)
+
 [List of Holidays](https://www.timeanddate.com/holidays/us/)
 
 ## Happy scraping!
